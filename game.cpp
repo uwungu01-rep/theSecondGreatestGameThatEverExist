@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <algorithm>
+#include <cstdlib>
 #include "game.h"
 
 using std::vector;
@@ -16,13 +17,20 @@ vector<int> seek(char guess, string target) {
     */
     vector<int> output;
 
-    string temp(1, guess);
     for(int i; i < target.length(); i++) {
-        if(target[i] == temp) {
+        if(target[i] == guess) {
             output.push_back(i);
         } 
     }
     return output;
+}
+
+void game::clear() {
+    #ifdef _WIN32 
+        system("cls");
+    #else
+        system("Clear");
+    #endif
 }
 
 vector<string> game::wordlistParser(string pathToWordList) {
