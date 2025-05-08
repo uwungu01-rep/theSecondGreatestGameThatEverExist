@@ -20,7 +20,7 @@ vector<int> seek(char guess, string target) {
     for(int i; i < target.length(); i++) {
         if(target[i] == guess) {
             output.push_back(i);
-        } 
+        }
     }
     return output;
 }
@@ -29,7 +29,7 @@ void game::clear() {
     #ifdef _WIN32 
         system("cls");
     #else
-        system("Clear");
+        system("clear");
     #endif
 }
 
